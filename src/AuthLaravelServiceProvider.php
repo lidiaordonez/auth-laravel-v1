@@ -20,7 +20,11 @@ class AuthLaravelServiceProvider extends ServiceProvider
     {
 
         $this->publishes([
-            __DIR__.'/models/User.php' => app_path('Models/UserTest.php'),
+            __DIR__.'/models/User.php' => app_path('Models/User.php'),
+        ], 'auth-force-updates');
+
+        $this->publishes([
+            __DIR__.'/controllers/Auth0IndexController.php' => app_path('Http/Controllers/Auth/Auth0IndexController.php'),
         ], 'auth-force-updates');
 
             // __DIR__.'/../config/nova.php' => config_path('nova.php'),
