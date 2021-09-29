@@ -21,6 +21,14 @@
     ],
     "require": {
         "php": "^7.2.5",
+        "illuminate/support": "^8.0",
         "auth0/login": "^6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FaithFM\\AuthLaravel\\AuthLaravelServiceProvider"
+            ]
+        }
     }
 }
