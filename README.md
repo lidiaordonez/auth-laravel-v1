@@ -30,7 +30,7 @@ Add the following to your project's `composer.json` file:
 ...then install using:
 
 ```bash
-$ composer update auth-laravel-v1
+$ composer update faithfm/auth-laravel-v1
 $ composer install --prefer-dist
 $ php artisan vendor:publish --tag=auth-force-updates --force
 ```

@@ -24,6 +24,11 @@
         "illuminate/support": "^8.0",
         "auth0/login": "^6.0"
     },
+    "autoload": {
+        "psr-4": {
+        "FaithFM\\AuthLaravel\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
