@@ -36,6 +36,7 @@ Add the following to your project's `composer.json` file:
 ```bash
 composer update faithfm/auth-laravel-v1
 php artisan vendor:publish
+php artisan migrate ?????
 ```
 
 # Updating the package
