@@ -40,7 +40,7 @@ class AuthLaravelServiceProvider extends ServiceProvider
         //   > php artisan vendor:publish --tag=auth-force-updates --force
         $this->publishes([
             __DIR__.'/../clone/' => base_path(),
-        ], 'auth-force-updates');
+        ], 'auth-every-update-force-clones');
 
 
         // Create gates for each permission an application defines in the AuthPermissionsRepository
