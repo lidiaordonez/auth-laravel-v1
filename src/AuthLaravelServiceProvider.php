@@ -44,11 +44,14 @@ class AuthLaravelServiceProvider extends ServiceProvider
 
 
         // Create gates for each permission an application defines in the AuthPermissionsRepository
-        foreach (AuthPermissionsRepository::DEFINED_PERMISSIONS as $permission) {
-            Gate::define($permission, function ($user) use ($permission) {
-                return $user->permissions->firstWhere('permission', $permission) !== null;     // check if the specified permission exists in the current User's UserPermissions model
-            });
+        try {
+            foreach (AuthPermissionsRepository::DEFINED_PERMISSIONS as $permission) {
+                Gate::define($permission, function ($user) use ($permission) {
+                    return $user->permissions->firstWhere('permission', $permission) !== null;     // check if the specified permission exists in the current User's UserPermissions model
+                });
+            }
         }
+        finally {}
 
         // Create routes
         $this->loadRoutesFrom(__DIR__.'/web.php');
