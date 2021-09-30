@@ -1,3 +1,9 @@
+/**
+ * This file is cloned / force-published from the "auth-laravel-v1" composer package.
+ *    WARNING: Local modifications will be overwritten when the package is updated.
+ *             See https://github.com/faithfm/auth-laravel-v1 for more details.
+ */
+
 // DEPENDENCY NOTE: We are expecting LaravelAppGlobals.users.permissions from our Laravel app, passed in via our Blade template.
 
 // return true if user has the specified permission - ie: "use-app"
