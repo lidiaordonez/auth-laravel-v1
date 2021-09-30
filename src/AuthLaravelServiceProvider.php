@@ -18,14 +18,28 @@ class AuthLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // $filesToClone = [
+        //     'app/Models/User.php',
+        //     'app/Http/Controllers/Auth/Auth0IndexController.php',
+        // ];
 
+        // foreach ($filesToClone as $file)
+        //     $this->publishes([
+        //         __DIR__.'/../clone/'.$file => base_path($file),
+        //     ], 'auth-force-updates');
+
+        // publish/clone everything contained in the "clone" folder of our repo (to the matching folder in our project)
         $this->publishes([
-            __DIR__.'/models/User.php' => app_path('Models/User.php'),
+            __DIR__.'/../clone/' => app_path(),
         ], 'auth-force-updates');
 
-        $this->publishes([
-            __DIR__.'/controllers/Auth0IndexController.php' => app_path('Http/Controllers/Auth/Auth0IndexController.php'),
-        ], 'auth-force-updates');
+        // $this->publishes([
+        //     __DIR__.'/../clone/app/Models/User.php' => app_path('Models/User.php'),
+        // ], 'auth-force-updates');
+
+        // $this->publishes([
+        //     __DIR__.'/../clone/app/Http/Controllers/Auth/Auth0IndexController.php' => app_path('Http/Controllers/Auth/Auth0IndexController.php'),
+        // ], 'auth-force-updates');
 
             // __DIR__.'/../config/nova.php' => config_path('nova.php'),
             // __DIR__.'/../public' => public_path('vendor/nova'),

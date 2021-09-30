@@ -1,8 +1,14 @@
 # auth-laravel-v1
 
-Laravel Authentication using Auth0 (developed for Faith FM projects)
+Laravel AuthN+AuthZ methodology (for Faith FM projects):
+ * Authentication using Auth0
+ * Authorization using local user-permissions table (with Laravel/Vue-JS helpers)
 
-This repo is a composer package created from pre-existing source files to improve authentication file consistency across our Faith FM Laravel+Vue projects.
+This repo is a composer package created to improve authentication file consistency across existing Faith FM Laravel+Vue projects.  (Previously we had been trying to maintain multiple copies of these files across multiple projects).
+
+At present, Laravel artisan's "publish" functionality is simply being used to clone a set of consistent files across our projects.  
+
+Note: In the future, it is anticipated that variations (for some of these files) may be required between projects, and at this time this simplistic "force-publish" deploy method will need to be replaced by more sophisticated approach using Laravel Traits / parent Classes, etc.
 
 
 # Installation
@@ -27,13 +33,17 @@ Add the following to your project's `composer.json` file:
 }
 ```
 
-...then install using:
+...then install/update using the following commands:
 
 ```bash
-$ composer update faithfm/auth-laravel-v1
-$ composer install --prefer-dist
-$ php artisan vendor:publish --tag=auth-force-updates --force
+composer update faithfm/auth-laravel-v1
+php artisan vendor:publish --tag=auth-force-updates --force
 ```
+
+## Architecture
+
+* Files to be cloned/force-published are found in the Clone folder - with a structure matching target folders of the target project
+
 
 ## Manual changes
 
