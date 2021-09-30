@@ -1,14 +1,12 @@
 # auth-laravel-v1
 
-Laravel AuthN+AuthZ methodology (for Faith FM projects):
- * Authentication using Auth0
- * Authorization using local user-permissions table (with Laravel/Vue-JS helpers)
+Laravel AuthN+AuthZ (for Faith FM projects):
+ * AuthN (Authentication) implemented using Auth0
+ * AuthZ (Authorization)  implemented using local user-permissions table (with Laravel/Vue-JS helpers)
 
-This repo is a composer package created to improve authentication file consistency across existing Faith FM Laravel+Vue projects.  (Previously we had been trying to maintain multiple copies of these files across multiple projects).
+This repo is a composer package created to improve consistency across our existing Faith FM Laravel+Vue projects.  (Previously we had been trying to maintain multiple copies of these files across multiple projects).
 
-At present, Laravel artisan's "publish" functionality is simply being used to clone a set of consistent files across our projects.  
-
-Note: In the future, it is anticipated that variations (for some of these files) may be required between projects, and at this time this simplistic "force-publish" deploy method will need to be replaced by more sophisticated approach using Laravel Traits / parent Classes, etc.
+At present, Laravel Artisan's vendor-publishing functionality is simply being used to clone a set of consistent files across our projects.
 
 
 # Installation
@@ -42,7 +40,11 @@ php artisan vendor:publish --tag=auth-force-updates --force
 
 ## Architecture
 
-* Files to be cloned/force-published are found in the Clone folder - with a structure matching target folders of the target project
+* Files to be cloned/force-published are found in the "clone" folder - with a structure matching target folders of the target project
+
+* In the future, it is anticipated that some variations may be required between projects.  At this time the simplistic cloned/force-publish deploy method will need to be replaced by a more sophisticated approach - ie: using Laravel Traits / parent Classes, etc.  At this time, the number of files in the "clone" folder will reduce and be replaced by new files in the "src" folder.
+
+
 
 
 ## Manual changes
