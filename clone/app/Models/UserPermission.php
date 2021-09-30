@@ -26,6 +26,15 @@ class UserPermission extends Model implements Auditable
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'restrictions' => 'array',
+    ];
+
+    /**
      * Get the user that owns the permissions.
      */
     public function user()
