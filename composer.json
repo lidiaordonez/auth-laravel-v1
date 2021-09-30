@@ -32,7 +32,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FaithFM\\AuthLaravel\\AuthLaravelServiceProvider"
+                "FaithFM\\AuthLaravel\\AuthLaravelServiceProvider",
+                "Auth0\\Login\\LoginServiceProvider"
             ]
         }
     }

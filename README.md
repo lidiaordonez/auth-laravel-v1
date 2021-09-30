@@ -31,7 +31,14 @@ Add the following to your project's `composer.json` file:
 }
 ```
 
-...then install/update using the following commands:
+...then install using the following commands:
+
+```bash
+composer update faithfm/auth-laravel-v1
+php artisan vendor:publish
+```
+
+# Updating the package
 
 ```bash
 composer update faithfm/auth-laravel-v1
@@ -65,6 +72,26 @@ AUTH0_CLIENT_ID=XXXXXXXXXXXXXXXX
 AUTH0_CLIENT_SECRET=XXXXXXXXXXXX
 ```
 
+### File: `config/auth.php`:
+Replace the default 'eloquent' users provider with our 'auth0 provider:
+```php
+    'providers' => [
+        'users' => [
+            'driver' => 'auth0',
+            'model' => App\Models\User::class,
+        ],
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\User::class,
+        // ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    ],
+```
+
 ### File: `routes/web.php`:
 Add Auth0-related routes:
 ```php
@@ -75,3 +102,15 @@ Route::match(['get', 'post'], '/logout', 'Auth\Auth0IndexController@logout')->na
 Route::get('/profile', 'Auth\Auth0IndexController@profile')->name('profile')->middleware('auth');
 ```
 
+### Passing LaravelAppGlobals to front-end:
+
+MISSING DOCUMENTATION !!!!!!!!!
+Document the process of passing this to the front-end in either a blade file, controller, or web.php.
+
+
+### Existing projects - need to remove on installation:
+
+* routes/web.php - Auth0 stuff
+* config/app.php - Auth0\Login\LoginServiceProvider::class,
+* app/Providers/AuthServiceProvider.php - all defined-permission stuff
+* app/Providers/AppServiceProvider.php - Auth0 + CustomUserRepository bindings
