@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is cloned / force-published from the "auth-laravel-v1" composer package.
+ *    WARNING: Local modifications will be overwritten when the package is updated.
+ *             See https://github.com/faithfm/auth-laravel-v1 for more details.
+ */
 
 namespace App\Models;
 
